@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('../partials/header') %>
+    <title><%= title %> | Community Portal</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.jpg">
 </head>
 <body>
-    <h1>THANK YOU!</h1>
+    <h1>THANK YOU! <%= name %></h1>
     <p>Thank you for submitting your request using our form. We'll respond so very promptly.</p>
     <button>
-        <a href="home.ejs"></a>
+        <a href="/">Return to the HomePage?</a>
     </button>
-    <%- include('../partials/footer') %>
+    <p>&copy; <%= new Date().getFullYear() %> Community Portal.</p>
+    <p>
+        <%= title %> Page
+    </p>
 </body>
 </html>

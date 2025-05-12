@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const submissions = [];
 
 router.get('/', (req, res) => {
 res.render('home', {title: 'Home'});
@@ -20,7 +21,24 @@ res.render('contact', {title: 'Contact'});
 });
 
 router.get('/thankyou', (req, res) => {
-res.render('thankyou', {title: 'Thank You'});
+const {name} = req.query
+res.render('thankyou', {title: 'Thank You', name});
+});
+
+router.post('/contact', (req, res) => {
+  const { name, email, message } = req.body;
+
+  const newSubmission = {
+    name,
+    email,
+    message,
+  };
+
+  submissions.push(newSubmission);
+  
+res.redirect(`/thankyou?name=${encodeURIComponent(name)}`);
+
+console.log(`Submmited: ${name}, ${email}, ${message}`)
 });
 
 module.exports = router;
