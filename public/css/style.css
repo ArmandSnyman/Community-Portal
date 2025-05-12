@@ -1,34 +1,409 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-h1 {
-    color: #4CAF50;
-    text-align: center;
-    margin-top: 20px;
-}
+      
+        header {
+            background-image: url('Header2.png'); 
+            background-size: cover;
+            background-position: center; 
+            color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            position: relative; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+        }
 
-p {
-    text-align: center;
-    font-size: 18px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 4rem;
+            animation: textGlow 1.5s infinite ease-in-out alternate;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
 
-footer {
-  background-color: #f8f8f8;
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-  margin-top: 20px;
-}
-footer nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-}
-footer nav a:hover {
-  text-decoration: underline;
-}
+        header p {
+            margin: 0;
+            font-size: 1.5rem;
+            animation: textGlow 1.5s infinite ease-in-out alternate;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        
+        header h1:hover, header p:hover, nav a:hover, h2:hover {
+            transform: scale(1.2);
+            text-shadow: 2px 2px 6px #fff;
+        }
+
+        /* Navigation styling */
+        nav {
+            background-color: #1b1b1b;
+            padding: 10px 0;
+            animation: fadeInFromLeft 1.2s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #00bfff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+     
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+        section {
+            margin-bottom: 50px;
+            animation: fadeZoomIn 1.5s ease-out;
+        }
+
+        h2 {
+            border-bottom: 2px solid #00bfff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #00bfff; 
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            animation: fadeInFromRight 1s ease-out;
+        }
+
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .job, .education {
+            margin-bottom: 30px;
+            animation: fadeInFromBottom 1.5s ease-out;
+        }
+
+        .job h3, .education h3 {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .job .date, .education p {
+            color: #9e9e9e;
+            font-size: 0.9rem;
+        }
+
+      
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            
+        }
+
+        .footer-text {
+            margin: 0;
+            font-size: 5rem; 
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .footer-text:hover {
+            transform: scale(1.1); 
+            text-shadow: 2px 2px 8px #00bfff; 
+        }
+        .footer-photo {
+            width: 70px; 
+            height: auto; 
+            border-radius: 50%; 
+            margin-top: 10px; 
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 2px 2px 4px #00bfff, -2px -2px 4px #00bfff;
+            }
+            100% {
+                text-shadow: 2px 2px 10px #fff, -2px -2px 10px #fff;
+            }
+        }
+
+        @keyframes fadeZoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInFromBottom {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05); 
+            }
+        }
+        
+        @keyframes waveEffect {
+        0% {
+            background-color: #00008B; /* Dark blue */
+        }
+        25% {
+            background-color: #003366; /* Medium blue */
+        }
+        50% {
+            background-color: #00bfff; /* Light blue */
+        }
+        75% {
+            background-color: #003366; /* Medium blue */
+        }
+        100% {
+            background-color: #00008B; /* Dark blue */
+        }
+        }
+
+
+        
+        #skills ul li {
+            margin-bottom: 5px;
+        }
+
+       
+        main {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            main {
+                margin: 20px 10px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .job h3, .education h3 {
+                font-size: 1.2rem;
+            }
+
+            p, ul {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin-bottom: 8px;
+            }
+
+            main {
+                margin: 15px 5px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .job h3, .education h3 {
+                font-size: 1rem;
+            }
+
+            p, ul {
+                font-size: 0.9rem;
+            }
+        }
+        
+        .cv-button {
+            display: inline-block;
+            background-color: #00bfff; 
+            padding: 10px 20px; 
+            border: none;
+            border-radius: 20px; 
+            text-decoration: none;
+            font-size: 1.rem; 
+            line-height: 0.4; 
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background-color: #0099cc; 
+            transform: scale(1.05); 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            animation: fadeInFromBottom 1.5s ease-out;
+        }
+
+        table th, table td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #1b1b1b;
+            color: #ffffff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #1e1e1e;
+        }
+
+        table tr:hover {
+            background-color: #333333;
+        }
