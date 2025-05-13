@@ -407,3 +407,9 @@
         table tr:hover {
             background-color: #333333;
         }
+        img {
+            width: 50%;
+            height: 50%;
+            display: block;
+            margin: 0 auto;
+        }
