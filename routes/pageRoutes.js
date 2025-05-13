@@ -25,6 +25,11 @@ const {name} = req.query
 res.render('thankyou', {title: 'Thank You', name});
 });
 
+router.get('/404', (req, res) => {
+const {name} = req.query
+res.render('404', {title: '404', name});
+});
+
 router.post('/contact', (req, res) => {
   const { name, email, message } = req.body;
 

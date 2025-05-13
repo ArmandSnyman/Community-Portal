@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %> | Community Portal</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" type="image/png" href="/images/favicon.jpg">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <h1>THANK YOU! <%= name %></h1>
-    <p>Thank you for submitting your request using our form. We'll respond so very promptly.</p>
-    <button>
-        <a href="/">Return to the HomePage?</a>
-    </button>
-    <p>&copy; <%= new Date().getFullYear() %> Community Portal.</p>
-    <p>
-        <%= title %> Page
-    </p>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <section class="thank-you-section">
+            <h2>Thank You!</h2>
+            <p>Your message has been successfully sent. We will get back to you shortly.</p>
+            <a href="/" class="form-button">Go Back to Home</a>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>

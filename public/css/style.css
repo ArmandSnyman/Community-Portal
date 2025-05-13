@@ -407,3 +407,111 @@
         table tr:hover {
             background-color: #333333;
         }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeZoomIn 1.5s ease-out;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            color: #00bfff;
+        }
+
+        .contact-form .form-input,
+        .contact-form .form-textarea {
+            max-width: 800px;
+            /*margin: 50px auto;*/
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #333333;
+            border-radius: 5px;
+            background-color: #121212;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form .form-input:focus,
+        .contact-form .form-textarea:focus {
+            border-color: #00bfff;
+            outline: none;
+        }
+
+        .contact-form .form-textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .contact-form .form-button {
+            display: inline-block;
+            background-color: #00bfff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form .form-button:hover {
+            background-color: #0099cc;
+            transform: scale(1.05);
+        }
+
+        .error-section {
+                text-align: center;
+                margin: 50px auto;
+                padding: 40px;
+                background-color: #1e1e1e;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+                animation: fadeZoomIn 1.5s ease-out infinite alternate;
+            }
+
+            .error-section h1 {
+                font-size: 5rem;
+                color: #0099cc;
+                animation: pulse 1.5s infinite ease-in-out;
+            }
+
+            .error-section p {
+                font-size: 1.5rem;
+                color: #e0e0e0;
+                margin-bottom: 30px;
+            }
+
+            .error-section .form-button {
+                display: inline-block;
+                background-color: #00bfff;
+                color: #ffffff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .error-section .form-button:hover {
+                background-color: #0099cc;
+                transform: scale(1.05);
+            }
+
+            /* Animations */
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }
