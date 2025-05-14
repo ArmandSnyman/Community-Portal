@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Portal</title>
+    
 </head>
 <body>
     <header>
+        <h1>Welcome to the Community Portal</h1>
+        <p>Your hub for community events and updates</p>
         <%- include('../partials/header') %>
     </header>
     <main>
         <section>
-            <h2>Welcome to the Community Portal</h2>
-            <p>Your hub for community events and updates</p>
             <h2>Upcoming Events</h2>
-            <table>
+             <table>
                 <thead>
                     <tr>
                         <th>Event Name</th>
@@ -23,20 +25,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Placeholder rows for now -->
-                    <tr>
-                        <td>Community Meetup</td>
-                        <td>May 20, 2025</td>
-                        <td>Community Hall</td>
-                        <td>A gathering for all community members to discuss upcoming projects.</td>
-                    </tr>
-                    <tr>
-                        <td>Charity Run</td>
-                        <td>June 5, 2025</td>
-                        <td>Central Park</td>
-                        <td>A 5K run to raise funds for local charities.</td>
-                    </tr>
-                </tbody>
+  <% events.forEach(event => { %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.date %></td>
+      <td><%= event.location %></td>
+      <td><%= event.description %></td>
+    </tr>
+  <% }); %>
+</tbody>
             </table>
         </section>
     </main>

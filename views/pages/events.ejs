@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header') %>
 </head>
-    <header>
-        <%- include('../partials/header') %>  
-    </header>
 <body>
-    <main>
-        <h1>UPCOMING EVENTS</h1>
-        <p>Check out what's happening soon!</p>
-    </main>
+    <h1 id="eventHead">UPCOMING EVENTS</h1>
+    <p id="eventHead">Check out what's happening soon!</p>
+
+     <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+  <% events.forEach(event => { %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.date %></td>
+      <td><%= event.location %></td>
+      <td><%= event.description %></td>
+    </tr>
+  <% }); %>
+</tbody>
+            </table>
+        </section>
+
 </body>
     <%- include('../partials/footer') %>
 </html>
