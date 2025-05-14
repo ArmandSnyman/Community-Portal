@@ -1,61 +1,57 @@
-# CPF Community Portal
+# Community Policing Forum - Community Portal
 
-## Overview
+# Overview
 
-## Technologies Used
-A dynamic community portal built using Node.js, Express.js, EJS, CSS, Git & GitHub, Nodemon and MongoDB. Featuring a Home, About, Events, Contact and Thank You page.
+The Community Policing Forum (CPF) Community Portal is a dynamic web application designed to strengthen community engagement by providing easy access to local policing events, contact information, and resources. 
 
-## Instructions
+# The portal includes the following pages:
 
-1. Run `npm install` to install dependencies.
-2. Use `npm run dev` to start the development server with nodemon.
-3. Add your own route handlers and middleware as needed.
+Home – Overview and mission statement
 
-## Team
-Armand Snyman 600317 - Data Manager
+About – Information about the CPF and its goals
+
+Events – Upcoming community policing events
+
+Contact – Communication channel for inquiries and feedback
+
+Thank You – Confirmation page for form submissions
+
+This project emphasizes transparency, accessibility, and active citizen involvement in local safety efforts.
+
+# Technologies Used
+
+Node.js – JavaScript runtime for server-side development
+
+Express.js – Web framework for routing and middleware
+
+EJS – Templating engine for dynamic HTML rendering
+
+CSS – Custom styling for page layout and aesthetics
+
+Git & GitHub – Version control and collaboration
+
+Nodemon – Auto-reloading development server
+
+# Team
+
+Armand Snyman (600317) – Data Manager
 ...
-...
 
-## Project Structure
+# Instructions
 
-```
-my-express-mvc-app
-├── src
-│   ├── app.ts               # Entry point of the application
-│   ├── controllers          # Contains the controllers for handling requests
-│   │   └── index.ts         # Index controller
-│   ├── models               # Contains the data models
-│   │   └── index.ts         # Model definitions
-│   ├── routes               # Contains the route definitions
-│   │   └── index.ts         # Route setup
-│   └── views                # Contains the view templates
-│       └── index.ejs        # EJS template for the index view
-├── package.json             # NPM configuration file
-├── tsconfig.json            # TypeScript configuration file
-└── README.md                # Project documentation
-```
+Clone the repository:
+git clone 
+cd 
 
-## Installation
+Install dependencies:
+npm install
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd my-express-mvc-app
-   ```
-3. Install the dependencies:
-   ```
-   npm install
-   ```
+Start the development server with nodemon:
+npm run dev
 
-## Usage
-
-To start the application, run the following command:
-```
+# Usage
+To start the application:
 npm start
-```
 
-The application will be running on `http://localhost:3000`.
-
+Then visit:
+http://localhost:3000 in your browser to explore the portal.
