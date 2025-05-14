@@ -8,7 +8,7 @@ const pageRoutes = require("./routes/pageRoutes");
 const app = express();
 const port = 3000;
 
-app.use(favicon(path.join(__dirname, "public", "images", "favicon.jpg")));
+app.use(favicon(path.join(__dirname, "public", "images", "favicon.png")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
