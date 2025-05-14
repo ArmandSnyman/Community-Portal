@@ -412,3 +412,33 @@
             text-align: center;
             top: 20px;
         }
+
+        #memberHeading{
+            font-size: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.719);
+        }
+
+        #memberBody{
+            position: relative;
+            top: -7px;
+            padding-left: 20px;
+        }
+
+        .memberDiv{
+            background-color: #ffffff4f;
+            margin: 10px;
+            margin-bottom: 15px;
+            padding-top: 5px;
+            padding-left: 20px;
+            padding-bottom: 7px;
+            padding-right: 15px;
+            width: max-content;
+            max-width: 750px;
+            border-radius: 10px;
+        }
+
+        #allMembers{
+            position: relative;
+            top: 20px;
+            left: 15px;
+        }

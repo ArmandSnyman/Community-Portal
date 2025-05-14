@@ -27,6 +27,30 @@ const events = [
   // add more events here...
 ];
 
+// Temporary in-memory data for members
+const members = [
+  {
+    name: "Francois Vorster",
+    position: "Team Leader",
+    description: "Guides and instructs the group towards a common goal, overseeing progress, delegating work, and providing support to team members."
+  },
+  {
+    name: "Armand Snyman",
+    position: "Data Manager",
+    description: "Oversees the entire lifecycle of data within the organization, from collection and storage to analysis and security"
+  },
+  {
+    name: "Moegammad Allan Hendricks",
+    position: "Front-End Developer",
+    description: "Designs, builds and improves website software that meets the community needs."
+  },
+    {
+    name: "Kailesen Rangasamy",
+    position: "Documentation Manager",
+    description: "Ensures that the organization's documentation is organized, accessible, and compliant with regulations and internal policies"
+  },
+  // add more members here...
+];
 
 
 router.get('/', (req, res) => {
@@ -34,7 +58,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/about', (req, res) => {
-    res.render('pages/about', { title: 'About' });
+    res.render('pages/about', { title: 'About', members });
 });
 
 router.get('/events', (req, res) => {

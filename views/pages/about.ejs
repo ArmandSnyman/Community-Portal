@@ -20,11 +20,19 @@
             Featuring a Home, About, Events, Contact and Thank You page.
         </p>
         <h2>MEET THE TEAM</h2>
-        <p>
-            Armand Snyman - Data Manager (Image)
-            ...
-            ...
-        </p>
+        
+        <section id="allMembers">
+            <% members.forEach(member => { %>
+            <div class="memberDiv">
+                <h3 id="memberHeading"><%= member.name %></h3>
+                <div id="memberBody">
+                    <P> Position: <%= member.position %></P>
+                    <P> Description: <%= member.description %></P>
+                </div>
+            </div>
+        <% }); %>
+        </section>
+        
     </main>
 </body>
     <%- include('../partials/footer') %>
