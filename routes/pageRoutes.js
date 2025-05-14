@@ -1,44 +1,79 @@
-// routes/pageRoutes.js
-
 const express = require('express');
 const router = express.Router();
+const contactController = require('../controllers/contactController');
 const submissions = [];
 
+
+// Temporary in-memory data for events
+const events = [
+  {
+    name: "Community Meetup",
+    date: "May 20, 2025",
+    location: "Community Hall",
+    description: "A gathering for all community members to discuss upcoming projects."
+  },
+  {
+    name: "Charity Run",
+    date: "June 5, 2025",
+    location: "Central Park",
+    description: "A 5K run to raise funds for local charities."
+  },
+  {
+    name: "Farmers Market",
+    date: "May 23, 2025",
+    location: "The Bryant Park",
+    description: "A community-initiated farmer's market."
+  },
+  // add more events here...
+];
+
+// Temporary in-memory data for members
+const members = [
+  {
+    name: "Francois Vorster",
+    position: "Team Leader",
+    description: "Guides and instructs the group towards a common goal, overseeing progress, delegating work, and providing support to team members."
+  },
+  {
+    name: "Armand Snyman",
+    position: "Data Manager",
+    description: "Oversees the entire lifecycle of data within the organization, from collection and storage to analysis and security"
+  },
+  {
+    name: "Moegammad Allan Hendricks",
+    position: "Front-End Developer",
+    description: "Designs, builds and improves website software that meets the community needs."
+  },
+    {
+    name: "Kailesen Rangasamy",
+    position: "Documentation Manager",
+    description: "Ensures that the organization's documentation is organized, accessible, and compliant with regulations and internal policies"
+  },
+  // add more members here...
+];
+
+
 router.get('/', (req, res) => {
-res.render('home', {title: 'Home'});
+  res.render('pages/home', { title: 'Home', events });
 });
 
 router.get('/about', (req, res) => {
-res.render('about', {title: 'About'});
+    res.render('pages/about', { title: 'About', members });
 });
 
 router.get('/events', (req, res) => {
-res.render('events', {title: 'Events'});
+  res.render('pages/events', { title: 'Events', events });
 });
 
 router.get('/contact', (req, res) => {
-res.render('contact', {title: 'Contact'});
+    res.render('pages/contact', { title: 'Contact', errors: [], old: {} });
 });
 
 router.get('/thankyou', (req, res) => {
-const {name} = req.query
-res.render('thankyou', {title: 'Thank You', name});
+    const { name } = req.query
+    res.render('pages/thankyou', { title: 'Thank You', name });
 });
 
-router.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
-
-  const newSubmission = {
-    name,
-    email,
-    message,
-  };
-
-  submissions.push(newSubmission);
-  
-res.redirect(`/thankyou?name=${encodeURIComponent(name)}`);
-
-console.log(`Submmited: ${name}, ${email}, ${message}`)
-});
+router.post('/contact', contactController.handleContact);
 
 module.exports = router;
