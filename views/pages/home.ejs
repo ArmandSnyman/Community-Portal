@@ -11,10 +11,11 @@
         <p>Your hub for community events and updates.</p><br>
         <%- include('../partials/header') %>
     </header>
-    <main>
+        <main>
+        <h2 id="eventHead">UPCOMING EVENTS</h2>
+        <p id="eventHead">Check out what's happening next!</p>
         <section>
-            <h2>Upcoming Events</h2>
-             <table>
+            <table>
                 <thead>
                     <tr>
                         <th>Event Name</th>
@@ -24,17 +25,31 @@
                     </tr>
                 </thead>
                 <tbody>
-  <% events.forEach(event => { %>
-    <tr>
-      <td><%= event.name %></td>
-      <td><%= event.date %></td>
-      <td><%= event.location %></td>
-      <td><%= event.description %></td>
-    </tr>
-  <% }); %>
-</tbody>
-            </table>
-        </section>
+                    <% events.forEach(event => { %>
+                        <tr>
+                            <td><%= event.name %></td>
+                            <td><%= event.date %></td>
+                            <td><%= event.location %></td>
+                            <td><%= event.description %></td> 
+                        </tr>
+                        <% }); %>
+                </tbody>
+                </table>
+                <br>
+                <div class="eventsImageContainer">
+                    <% events.forEach(event => { %>
+                        
+                        <div class="eventsImages">
+                            
+                            <p><strong><%= event.name %></strong></p>
+                            <img id="eventsImage" src="<%= event.image %>" alt="<%= event.name %>">
+                        </div>
+                        <br>
+                        
+                    <% }) %>
+                </div>
+
+            </section>
     </main>
     <%- include('../partials/footer') %>
 </body>
