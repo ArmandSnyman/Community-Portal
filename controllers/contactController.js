@@ -29,7 +29,7 @@ exports.handleContact = (req, res) => {
     }
 
     responses.push({ name, email, message, date: new Date() });
-    res.render('/thankyou', { name, title: 'Thank You' });
+    res.render('pages/thankyou', { name, title: 'Thank You' });
     console.log(`Submmited: ${name}, ${email}, ${message}`)
 };
 

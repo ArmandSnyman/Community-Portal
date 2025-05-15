@@ -2,7 +2,7 @@
 
 # Overview
 
-The Community Policing Forum (CPF) Community Portal is a dynamic web application designed to strengthen community engagement by providing easy access to local policing events, contact information, and resources. 
+The Community Policing Forum (CPF) Community Portal is a dynamic web application designed to strengthen community engagement in keeping our area safe and promoting community involvement and growth by providing easy access to local policing events, contact information, and resources. 
 
 # The portal includes the following pages:
 

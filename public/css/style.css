@@ -462,7 +462,7 @@
 
         .contact-form .form-input,
         .contact-form .form-textarea {
-            width: 100%;
+            width: 15em;
             padding: 15px; 
             margin-bottom: 20px; 
             border: 1px solid #333333;
@@ -493,4 +493,16 @@
         .contact-form .form-button:hover {
             background-color: #0099cc;
             transform: scale(1.1);
+        }
+
+        #cpfImage{
+            width: 5em;
+            height: 5em;
+            padding-right: 0.5em;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            justify-content: center;
         }
