@@ -78,6 +78,10 @@ router.get('/thankyou', (req, res) => {
     res.render('pages/thankyou', { title: 'Thank You', name });
 });
 
+router.use((req, res) => {
+    res.status(404).render('pages/404', { title: 'Page Not Found' });
+});
+
 router.post('/contact', contactController.handleContact);
 
 module.exports = router;
