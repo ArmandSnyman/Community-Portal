@@ -69,6 +69,10 @@ router.get('/contact', (req, res) => {
     res.render('pages/contact', { title: 'Contact', errors: [], old: {} });
 });
 
+router.post('/contact', (req, res) => {
+    res.redirect('/thankyou');
+});
+
 router.get('/thankyou', (req, res) => {
     const { name } = req.query
     res.render('pages/thankyou', { title: 'Thank You', name });
