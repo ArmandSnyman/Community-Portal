@@ -65,7 +65,10 @@
     <%- include('../partials/footer') %>
     <script>
         window.onload = function() {
-            document.getElementById("welcomeModal").style.display = "block";
+            if (!sessionStorage.getItem("welcomeModalShown")){
+                document.getElementById("welcomeModal").style.display = "block";
+                sessionStorage.setItem("welcomeModalShown", "true");
+            }
         };
         
         function closeModal() {
