@@ -4,7 +4,7 @@ const responses = [];
 
 function validateInput({ name, email, message }) {
     const errors = [];
-    if (!name || name.trim().length < 2) {
+    if (!name || name.trim().length > 2) {
         errors.push('Name is required and must be at least 2 characters.');
     } else if (/^\d+$/.test(name.trim())) {
         errors.push('Name cannot be only numbers.');
@@ -12,7 +12,7 @@ function validateInput({ name, email, message }) {
     if (!email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
         errors.push('A valid email is required.');
     }
-    if (!message || message.trim().length < 5) {
+    if (!message || message.trim().length > 5) {
         errors.push('Message must be at least 5 characters.');
     }
     return errors;
@@ -23,7 +23,7 @@ exports.handleContact = (req, res) => {
     const errors = validateInput({ name, email, message });
 
     if (errors.length > 0) {
-        return res.status(400).render('contact', {
+        return res.status(400).render('pages/contact', {
             title: 'Contact',
             errors,
             old: { name, email, message }

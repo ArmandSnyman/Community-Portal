@@ -66,12 +66,10 @@ router.get('/events', (req, res) => {
 });
 
 router.get('/contact', (req, res) => {
-    res.render('pages/contact', { title: 'Contact', errors: [], old: {} });
+    res.render('pages/contact', { title: 'Contact' });
 });
 
-router.post('/contact', (req, res) => {
-    res.redirect('/thankyou');
-});
+router.post('/contact', contactController.handleContact);
 
 router.get('/thankyou', (req, res) => {
     const { name } = req.query
@@ -82,6 +80,6 @@ router.use((req, res) => {
     res.status(404).render('pages/404', { title: 'Page Not Found' });
 });
 
-router.post('/contact', contactController.handleContact);
+
 
 module.exports = router;

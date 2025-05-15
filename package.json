@@ -7,11 +7,12 @@
     "dev": "nodemon app.js"
   },
   "devDependencies": {
-    "nodemon": "^2.0.0"
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "serve-favicon": "^2.5.0"
   }
+  
 }
