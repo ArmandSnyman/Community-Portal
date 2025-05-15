@@ -6,9 +6,14 @@
     
 </head>
 <body>
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Welcome to the CPF Community Portal!</h2>
+            <p>Your hub for community events and updates.</p>
+        </div>
+    </div>
     <header>
-        <h1>Welcome to the CPF Community Portal</h1><br>
-        <p>Your hub for community events and updates.</p><br>
         <%- include('../partials/header') %>
     </header>
     <main>
@@ -58,5 +63,21 @@
             </section>
     </main>
     <%- include('../partials/footer') %>
+    <script>
+        window.onload = function() {
+            document.getElementById("welcomeModal").style.display = "block";
+        };
+        
+        function closeModal() {
+            document.getElementById("welcomeModal").style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("welcomeModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 </body>
 </html>
