@@ -3,64 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        
+    </style>
 </head>
+<body>
     <header>
         <%- include('../partials/header') %>  
     </header>
-<body>
-  <main>
-    <h2>CONTACT US</h2>
-    <form method="POST" action="/contact" class="contact-form" id="contactForm" onsubmit="return validateForm()">
-      <label for="nameID">Name:</label>
-      <input type="text" id="nameID" name="name" placeholder="Your Name" class="form-input" /><br />
-      <label for="emailID">Email:</label>
-      <input type="email" id="emailID" name="email" placeholder="Your Email" class="form-input" /><br />
-      <label for="messageID">Message:</label>
-      <textarea name="message" id="messageID" placeholder="Your Message" class="form-textarea"></textarea><br />
-      <button type="submit" class="form-button" id="submitBtn">Send</button>
-    </form>
-    <script>
-      function validateForm() {
-        const name = document.getElementById('nameID').value.trim();
-        const email = document.getElementById('emailID').value.trim();
-        const message = document.getElementById('messageID').value.trim();
+    <main>
+        <h2>CONTACT US</h2>
+        <form method="POST" action="/contact" class="contact-form" id="contactForm">
+            <label for="nameID">Name:</label>
+            <input 
+                type="text" 
+                id="nameID" 
+                name="name" 
+                placeholder="Your Name" 
+                required 
+                minlength="2" 
+                pattern=".*\D.*" 
+                class="form-input" 
+                oninput="validateName()" 
+            />
+            <span id="nameError" class="error-message">
+                Name must be at least 2 characters and not just numbers.
+            </span>
+            <br />
 
-        // Name validation
-        if (!name || name.length < 2) {
-          alert('Name is required and must be at least 2 characters.');
-          return false;
-        }
-        if (/^\d+$/.test(name)) {
-          alert('Name cannot be only numbers.');
-          return false;
-        }
+            <label for="emailID">Email:</label>
+            <input 
+                type="email" 
+                id="emailID" 
+                name="email" 
+                placeholder="Your Email" 
+                required 
+                class="form-input" 
+                oninput="validateEmail()" 
+            />
+            <span id="emailError" class="error-message">
+                Please enter a valid email address.
+            </span>
+            <br />
 
-        // Email validation
-        if (!email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-          alert('A valid email is required.');
-          return false;
-        }
+            <label for="messageID">Message:</label>
+            <textarea 
+                name="message" 
+                id="messageID" 
+                placeholder="Your Message" 
+                required 
+                minlength="5" 
+                class="form-textarea" 
+                oninput="validateMessage()" 
+            ></textarea>
+            <span id="messageError" class="error-message">
+                Message must be at least 5 characters.
+            </span>
+            <br />
 
-        // Message validation
-        if (!message || message.length < 5) {
-          alert('Message must be at least 5 characters.');
-          return false;
-        }
+            <button type="submit" class="form-button" id="submitBtn">Send</button>
+        </form>
 
-        return true; // Allow form submission
-      }
+        <script>
+          
+            function validateName() {
+                const nameInput = document.getElementById('nameID');
+                const nameError = document.getElementById('nameError');
+                
+                if (!nameInput.checkValidity()) {
+                    nameError.style.display = 'block';
+                } else {
+                    nameError.style.display = 'none';
+                }
+            }
 
-      // Enable/disable submit button based on input (optional)
-      const form = document.getElementById('contactForm');
-      const submitBtn = document.getElementById('submitBtn');
-      form.addEventListener('input', function () {
-        submitBtn.disabled = !form.checkValidity();
-      });
-      window.addEventListener('DOMContentLoaded', function () {
-        submitBtn.disabled = !form.checkValidity();
-      });
-    </script>
-  </main>
-</body>
+            function validateEmail() {
+                const emailInput = document.getElementById('emailID');
+                const emailError = document.getElementById('emailError');
+                
+                if (!emailInput.checkValidity()) {
+                    emailError.style.display = 'block';
+                } else {
+                    emailError.style.display = 'none';
+                }
+            }
+
+            function validateMessage() {
+                const messageInput = document.getElementById('messageID');
+                const messageError = document.getElementById('messageError');
+                
+                if (!messageInput.checkValidity()) {
+                    messageError.style.display = 'block';
+                } else {
+                    messageError.style.display = 'none';
+                }
+            }
+            
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                validateName();
+                validateEmail();
+                validateMessage();
+
+                if (!this.checkValidity()) {
+                    event.preventDefault(); 
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', function() {
+                validateName();
+                validateEmail();
+                validateMessage();
+            });
+        </script>
+    </main>
     <%- include('../partials/footer') %>
+</body>
 </html>

@@ -572,3 +572,16 @@
         .close-btn:hover {
             color: #000;
         }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            display: none;
+        }
+        .form-input:invalid, .form-textarea:invalid {
+            border: 1px solid #ff4444;
+        }
+        .form-input:valid, .form-textarea:valid {
+            border: 1px solid #00c851;
+        }
