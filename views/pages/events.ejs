@@ -8,10 +8,10 @@
     <%- include('../partials/header') %>
 </header>
 <body>
-    <h2 id="eventHead">UPCOMING EVENTS</h2>
-    <p id="eventHead">Check out what's happening next!</p>
-
-     <section>
+    <main>
+        <h2 id="eventHead">UPCOMING EVENTS</h2>
+        <p id="eventHead">Check out what's happening next!</p>
+        <section>
             <table>
                 <thead>
                     <tr>
@@ -22,18 +22,32 @@
                     </tr>
                 </thead>
                 <tbody>
-  <% events.forEach(event => { %>
-    <tr>
-      <td><%= event.name %></td>
-      <td><%= event.date %></td>
-      <td><%= event.location %></td>
-      <td><%= event.description %></td>
-    </tr>
-  <% }); %>
-</tbody>
-            </table>
-        </section>
+                    <% events.forEach(event => { %>
+                        <tr>
+                            <td><%= event.name %></td>
+                            <td><%= event.date %></td>
+                            <td><%= event.location %></td>
+                            <td><%= event.description %></td> 
+                        </tr>
+                        <% }); %>
+                </tbody>
+                </table>
+                <br>
+                <div class="eventsImageContainer">
+                    <% events.forEach(event => { %>
+                        
+                        <div class="eventsImages">
+                            
+                            <p><strong><%= event.name %></strong></p>
+                            <img id="eventsImage" src="<%= event.image %>" alt="<%= event.name %>">
+                        </div>
+                        <br>
+                        
+                    <% }) %>
+                </div>
 
+            </section>
+    </main>
 </body>
     <%- include('../partials/footer') %>
 </html>

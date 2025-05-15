@@ -10,24 +10,25 @@ const events = [
     name: "Community Meetup",
     date: "May 20, 2025",
     location: "Community Hall",
-    description: "A gathering for all community members to discuss upcoming projects."
+    description: "A gathering for all community members to discuss upcoming projects.",
+    image: "/images/meetup.png"
   },
   {
     name: "Charity Run",
     date: "June 5, 2025",
     location: "Central Park",
-    description: "A 5K run to raise funds for local charities."
+    description: "A 5K run to raise funds for local charities.",
+    image: "/images/charityRun.png"
   },
   {
     name: "Farmers Market",
     date: "May 23, 2025",
     location: "The Bryant Park",
-    description: "A community-initiated farmer's market."
+    description: "A community-initiated farmer's market.",
+    image: "/images/farmersMarket.png"
   },
-  // add more events here...
 ];
 
-// Temporary in-memory data for members
 const members = [
   {
     name: "Francois Vorster",
@@ -49,7 +50,6 @@ const members = [
     position: "Documentation Manager",
     description: "Ensures that the organization's documentation is organized, accessible, and compliant with regulations and internal policies"
   },
-  // add more members here...
 ];
 
 
