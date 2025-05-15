@@ -1,5 +1,3 @@
-// app.js
-
 const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
@@ -21,5 +19,3 @@ app.use((req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
-
-
