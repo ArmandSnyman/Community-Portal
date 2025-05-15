@@ -528,3 +528,13 @@
         gap: 2rem; 
         margin-top: 2rem;
         }
+        .errorHeader{
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+        #errImage{
+            width: 5em;
+            height: 5em;
+            object-fit: contain;
+        }

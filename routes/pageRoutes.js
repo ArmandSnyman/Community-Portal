@@ -3,8 +3,6 @@ const router = express.Router();
 const contactController = require('../controllers/contactController');
 const submissions = [];
 
-
-// Temporary in-memory data for events
 const events = [
   {
     name: "Community Meetup",
