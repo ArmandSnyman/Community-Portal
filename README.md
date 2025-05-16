@@ -36,6 +36,8 @@ Nodemon – Auto-reloading development server
 
 Armand Snyman (600317) – Data Manager
 Francois Vorster (577969) - Team Lead
+
+NO PARTICIPATION! PLEASE READ THE PEER EVALUATION TEXT FILE PROVIDED.
 Moegammad Allan Hendricks (600677) - Front-End Dev
 Kailesen Rangasamy (601219) - Documentation Manager
 
